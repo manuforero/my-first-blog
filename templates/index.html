@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>Hello WOrld</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<h1 style="color:red">recetas sabrosas</h1>
+	<a href="{% url 'recet.views.new_recipe' %}">Nueva Receta</a>
+	<ul>
+		{% for rta in recetitas %}
+		<li>
+			<a href="{% url 'recet.views.recet_detail' pk=rta.pk %}">
+				{{rta.name}}
+			</a>	
+			<img src="{{ rta.image.url }}" alt="">
+			
+		</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>{{ receta_detalles.name }}</title>
+
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/base.css' %}"> 
+
+</head>
+<body>
+	<h1>{{ receta_detalles.name }}</h1>
+	<h2>{{ receta_detalles.description }}</h2>
+	<p>
+		{{ receta_detalles.category }} ---
+		{{ receta_detalles.description }} 
+
+	</p>
+
+	<img src="{{ receta_detalles.image.url }}" alt= "">
+</body>
+</html>
